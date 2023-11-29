@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Log in</title>
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <form action="sign-up-action.php" method="post">
+    <h1>Log in</h1>
+    <form action="log-in-action.php" method="post">
         <p>Email
             <input type="email" name="email" required>
         </p>
-        <p>Create a Password
+        <p>Password
             <input type="password" name="password" required>
         </p>
-        <button type="submit">Sign me up</button>
+        <button type="submit">Log in</button>
     </form>
 </body>
 </html>

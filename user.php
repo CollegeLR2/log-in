@@ -5,6 +5,7 @@ class User {
     public $password = "";
     public $password_hash = "";
     public $token = "";
+    public $auth = false;
     private $conn;
 
     // assume the username and password are not safe
@@ -47,5 +48,24 @@ class User {
         if (!$sqlQuery){
             die("MySQL query failed" . mysqli_error($this->conn));
         }
+    }
+
+    function auth() {
+        $sql = "SELECT id, email, password, token, is_active
+                FROM users
+                WHERE email = '{$this->email}'";
+        
+        // expect only one row
+        $result = $this->conn->query($sql);
+        if ($row = $result->fetch_assoc()) {
+            // this will hash and check the password
+            if(password_verify($this->password, $row["password"])) {
+                $this->auth = true;
+            }
+        }
+    }
+
+    function is_logged_in() {
+        return $this->auth;
     }
 }
