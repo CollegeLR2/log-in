@@ -1,0 +1,15 @@
+body {
+    background-color: #b7c6cb;
+    color: #000000;
+}
+
+button {
+    background-color: #5a1983;
+    color: #ffffff;
+}
+
+.link-button {
+    text-decoration: none;
+    color:#ffffff;
+    background-color: #5a1983;
+}
