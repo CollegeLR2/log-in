@@ -22,9 +22,14 @@
             <button type="submit">Log in</button>
         </form>
 
+        <?php if(isset($_GET["msg"]) && $_GET["msg"]=="incorrect"): ?>
+            <br />
+            <h4>Invalid credentials</h4>
+        <?php endif ?>
+
         <br />
         <button><a href="index.php" class="link-button">Home</a></button>
-        
+
     </div>
 </body>
 </html>

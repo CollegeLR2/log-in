@@ -17,9 +17,10 @@ if ($user->is_logged_in()) {
     $_SESSION["user"] = serialize($user);
 
     header("Location: index.php");
-    // incorrect email or password
+// incorrect email or password
 } else {
-    echo "Could not log in with these credentials :(";
-    echo "<br />";
-    echo "<a href='index.php'>Home</a>";
+    // echo "Could not log in with these credentials :(";
+    // echo "<br />";
+    // echo "<a href='index.php'>Home</a>";
+    header("Location: log-in.php?msg=incorrect");
 }

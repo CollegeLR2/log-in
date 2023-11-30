@@ -32,7 +32,7 @@ class User {
         $sql = "
         INSERT INTO users (
             email, 
-            password, 
+            password,
             token,
             is_active
         ) VALUES (
