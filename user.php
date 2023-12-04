@@ -1,6 +1,7 @@
 <?php 
 
 class User {
+    // public $username = "";
     public $email = "";
     public $password = "";
     public $password_hash = "";
@@ -10,6 +11,7 @@ class User {
 
     // assume the username and password are not safe
     function __construct($conn, $email, $password) {
+        // $this->username = mysqli_real_escape_string($conn, $username);
         $this->email = mysqli_real_escape_string($conn, $email);
         $this->password = mysqli_real_escape_string($conn, $password);
 
@@ -41,6 +43,8 @@ class User {
             '{$this->token}',
             '0'
         )";
+        // username, 
+        // '{$this->username}',
 
         // create MySQL query
         $sqlQuery = $this->conn->query($sql);

@@ -23,13 +23,14 @@ $mail->addReplyTo("johng@truro-penwith.ac.uk", "John");
 $mail->addAddress("er339467@truro-penwith.ac.uk", "L Rogers");
 $mail->Subject = "PHPMailer SMTP Test";
 
-$mail->msgHTML("Test message part 2?");
+$mail->msgHTML(file_get_contents("email.php"));
 $mail->AltBody = "Thanks for signing up to the site!";
 
 if ( !$mail->send() ) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    header("Location: index.php");
+    // header("Location: index.php");
+    echo "<a href='index.php'></a>";
 }
 
 ?>

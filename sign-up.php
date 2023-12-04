@@ -14,17 +14,20 @@
         <br />
         <form action="sign-up-action.php" method="post">
             <p>
+                <input type="text" name="username" required placeholder="username">
+            </p>
+            <p>
                 <input type="email" name="email" required placeholder="email">
             </p>
             <p>
                 <input type="password" name="password" required placeholder="create a password">
             </p>
             <!-- the plan is to use this colour to style some parts of the page when the user logs in -->
-            <p>
+            <!-- <p>
                 Pick your favourite colour 
                 <br />
                 <input type="color" name="colour" value="#5a1983">
-            </p>
+            </p> -->
 
             <button type="submit">Sign me up</button>
         </form>

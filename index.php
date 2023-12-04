@@ -26,6 +26,7 @@ if (isset($_SESSION["user"])) {
     <?php if ($logged_in): ?>
         <?php include_once "navbar-logged.php" ?>
         <h1>Welcome to the main page</h1>
+        <p>Some cool stuff will be here</p>
 
     <?php else: ?>
         <div class="container text-center">

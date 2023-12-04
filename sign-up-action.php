@@ -15,6 +15,7 @@ $conn = connect();
 include "user.php";
 
 // creates a new user with the email and password from the form
+// , $_POST["username"], 
 $user = new User($conn, $_POST["email"], $_POST["password"]);
 // adds data to db
 $user->insert();
@@ -22,6 +23,6 @@ $user->insert();
 include_once "sign-up-action-gmail.php";
 
 // puts user back onto index after signing up
-// header("Location: index.php")
+// header("Location: index.php");
 
 ?>
