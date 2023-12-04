@@ -18,7 +18,10 @@ include "user.php";
 $user = new User($conn, $_POST["email"], $_POST["password"]);
 // adds data to db
 $user->insert();
+
+include_once "sign-up-action-gmail.php";
+
 // puts user back onto index after signing up
-header("Location: index.php")
+// header("Location: index.php")
 
 ?>
