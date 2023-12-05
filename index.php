@@ -26,7 +26,11 @@ if (isset($_SESSION["user"])) {
     <?php if ($logged_in): ?>
         <?php include_once "navbar-logged.php" ?>
         <h1>Welcome to the main page</h1>
-        <p>Some cool stuff will be here</p>
+
+        <?php if(isset($_GET["msg"]) && $_GET["msg"]=="newPost"): ?>
+            <br />
+            <h4>New post created successfully</h4>
+        <?php endif ?>
 
     <?php else: ?>
         <div class="container text-center">

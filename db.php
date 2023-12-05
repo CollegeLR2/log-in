@@ -10,3 +10,10 @@ function connect() {
 
     return $conn;
 }
+
+function newPost($conn) {
+    $query = "INSERT INTO posts (user, post, time) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("sss", $_POST["user"], $_POST["post"], $_POST["time"]);
+    $stmt->execute();
+}
