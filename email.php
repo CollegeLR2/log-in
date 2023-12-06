@@ -1,4 +1,5 @@
 <?php 
+// the email sent to the user when signing up
 include_once "user.php";
 // $sql = "SELECT token FROM users WHERE email = " .  $_POST['email'];
 ?>

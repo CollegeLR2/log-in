@@ -1,10 +1,10 @@
 body {
-    background-color: #c4def1;
+    background-color: #8699cd;
     color: #000000;
 }
 
 button {
-    background-color: #5a1983;
+    background-color: #348319;
     color: #ffffff;
 }
 
@@ -13,12 +13,14 @@ input {
     color: #ffffff;
 }
 
+/* links shown inside of buttons, so they don't have the underline */
 .link-button {
     text-decoration: none;
     color:#ffffff;
-    background-color: #5a1983;
+    background-color: #348319;
 }
 
+/* style when viewing posts */
 .post {
     width: 35em;
     height: 20em;
@@ -30,15 +32,18 @@ input {
     width: 18rem;
 }
 
+/* status message when something successful happens */
 .success {
     /* background-color: #61bf55; */
     text-shadow: 3px 3px #61bf55;    
 }
 
+/* status message when something fails */
 .failure {
     text-shadow: 3px 3px #bf5555;
 }
 
+/* placeholder text inside of inputs */
 ::placeholder {
     color: #ffffff;
 }

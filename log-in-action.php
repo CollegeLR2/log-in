@@ -22,5 +22,7 @@ if ($user->is_logged_in()) {
     // echo "Could not log in with these credentials :(";
     // echo "<br />";
     // echo "<a href='index.php'>Home</a>";
+    
+    // takes user to log in page with helpful message
     header("Location: log-in.php?msg=incorrect");
 }

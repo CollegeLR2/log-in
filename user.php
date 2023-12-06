@@ -54,6 +54,7 @@ class User {
         }
     }
 
+    // check user password is correct
     function auth() {
         $sql = "SELECT id, email, password, token, is_active
                 FROM users

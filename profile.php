@@ -27,12 +27,13 @@ $conn = connect();
 
         <?php 
         // desc means that the most recent post is shown at the top
+        // gets all posts made by current user
         $sql = "SELECT * FROM posts 
                 WHERE user = '{$user->email}'
                 ORDER BY time DESC";
         $result = $conn->query($sql); 
         
-        // shows all the posts
+        // shows all the posts by the user
         include "view-posts.php";
 
         $result->free_result();

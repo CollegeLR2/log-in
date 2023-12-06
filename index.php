@@ -23,10 +23,12 @@ if (isset($_SESSION["user"])) {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- if the user has a session logged into -->
     <?php if ($logged_in): ?>
         <?php include_once "navbar-logged.php" ?>
         <h1>Welcome to the main page</h1>
 
+    <!-- if the user does not have a session -->
     <?php else: ?>
         <div class="container text-center">
             <h1>Welcome</h1>

@@ -22,6 +22,7 @@
             <button type="submit">Log in</button>
         </form>
 
+        <!-- helpful message to tell user the issue when they get credentials wrong -->
         <?php if(isset($_GET["msg"]) && $_GET["msg"]=="incorrect"): ?>
             <br />
             <h4 class="failure">Invalid credentials</h4>

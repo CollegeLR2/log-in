@@ -3,7 +3,6 @@
 session_start();
 
 include "db.php";
-include "user.php";
 
 $conn = connect();
 

@@ -26,11 +26,11 @@ $conn = connect();
             <h4 class="success">New post created successfully</h4>
         <?php endif ?>
 
-        <h1>Explore posts</h1>
+        <h1>Explore New Posts</h1>
         <br />
 
         <?php 
-        // desc means that the most recent post is shown at the top
+        // desc means that the most recent post is shown at the top (descending)
         $sql = "SELECT * FROM posts ORDER BY time DESC";
         $result = $conn->query($sql); 
         
