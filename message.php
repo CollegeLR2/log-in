@@ -26,6 +26,7 @@ if (isset($_SESSION["user"])) {
 
     <div class="container text-center">
         <h1>Create a new post</h1>
+        <br />
         <form action="message-action.php" method="post">
             <!-- <input type="text" name="post" class="post"> -->
             <input type="hidden" name="user" value="<?= $user->email ?>">

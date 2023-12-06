@@ -29,8 +29,8 @@ $mail->AltBody = "Thanks for signing up to the site!";
 if ( !$mail->send() ) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    // header("Location: index.php");
-    echo "<a href='index.php'></a>";
+    echo "Email has been sent";
+    header("Location: index.php");
 }
 
 ?>

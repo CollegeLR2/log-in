@@ -1,13 +1,9 @@
 <?php 
 
 session_start();
-// include_once "db.php";
-// include_once "user.php";
-// $logged_in = false;
-// if (isset($_SESSION["user"])) {
-//     $logged_in = true;
-//     $user = unserialize($_SESSION["user"]);
-// } 
+
+include_once "db.php";
+$conn = connect();
 
 ?>
 
@@ -25,8 +21,26 @@ session_start();
     <?php include_once "navbar-logged.php" ?>
 
     <div class="container text-center">
+        <?php if(isset($_GET["msg"]) && $_GET["msg"]=="newPost"): ?>
+            <br />
+            <h4 class="success">New post created successfully</h4>
+        <?php endif ?>
+
         <h1>Explore posts</h1>
-        <h4>SHOW SOME OF THE POSTS HERE IN ASCENDING ORDER OF TIME</h4>
+        <br />
+
+        <?php 
+        // desc means that the most recent post is shown at the top
+        $sql = "SELECT * FROM posts ORDER BY time DESC";
+        $result = $conn->query($sql); 
+        
+        // shows all the posts
+        include "view-table.php";
+
+        $result->free_result();
+        $conn->close();
+    ?>
+
     </div>
 
 </body>

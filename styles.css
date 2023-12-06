@@ -1,10 +1,15 @@
 body {
-    background-color: #cce2e9;
+    background-color: #c4def1;
     color: #000000;
 }
 
 button {
     background-color: #5a1983;
+    color: #ffffff;
+}
+
+input {
+    background-color: #000000;
     color: #ffffff;
 }
 
@@ -18,5 +23,22 @@ button {
     width: 35em;
     height: 20em;
     background-color: #000000;
+    color: #ffffff;
+}
+
+.card {
+    width: 18rem;
+}
+
+.success {
+    /* background-color: #61bf55; */
+    text-shadow: 3px 3px #61bf55;    
+}
+
+.failure {
+    text-shadow: 3px 3px #bf5555;
+}
+
+::placeholder {
     color: #ffffff;
 }

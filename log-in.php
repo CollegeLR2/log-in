@@ -24,7 +24,7 @@
 
         <?php if(isset($_GET["msg"]) && $_GET["msg"]=="incorrect"): ?>
             <br />
-            <h4>Invalid credentials</h4>
+            <h4 class="failure">Invalid credentials</h4>
         <?php endif ?>
 
         <br />
