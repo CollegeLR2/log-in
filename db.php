@@ -19,6 +19,7 @@ function newPost($conn) {
     $stmt->execute();
 }
 
+// removes a post from the db
 function deletePost($post_id, $conn) {
     $query = "DELETE FROM posts WHERE post_id = ?";
     $stmt = $conn->prepare($query);

@@ -8,7 +8,10 @@
         <!-- Show delete button only on posts in profile.php
              $_SERVER["PHP_SELF"] gets the name of the current file being used -->
         <?php if ($_SERVER["PHP_SELF"] === "/profile.php"): ?>
+            <!-- the onsubmit creates a confirmation as an alert. 
+            The user can either confirm or cancel the deletion from there -->
             <form action="delete-post.php" method="post" onsubmit="return confirm('Are you sure you want to delete this post?');">
+            <!-- Posts the post id, even though the user never sees it -->
                 <input type="hidden" name="post_id" value="<?= $row["post_id"] ?>">
                 <button class="delete" type="submit">Delete</button>
             </form>
