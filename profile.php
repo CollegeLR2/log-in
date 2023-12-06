@@ -2,6 +2,7 @@
 
 session_start();
 
+include_once "user.php";
 include_once "db.php";
 $conn = connect();
 
@@ -21,20 +22,18 @@ $conn = connect();
     <?php include_once "navbar-logged.php" ?>
 
     <div class="container text-center">
-        <?php if(isset($_GET["msg"]) && $_GET["msg"]=="newPost"): ?>
-            <br />
-            <h4 class="success">New post created successfully</h4>
-        <?php endif ?>
-
-        <h1>Explore New Posts</h1>
+        <h1>Posts made by <?= $user->email ?></h1>
         <br />
 
         <?php 
-        // desc means that the most recent post is shown at the top (descending)
-        $sql = "SELECT * FROM posts ORDER BY time DESC";
+        // desc means that the most recent post is shown at the top
+        // gets all posts made by current user
+        $sql = "SELECT * FROM posts 
+                WHERE user = '{$user->email}'
+                ORDER BY time DESC";
         $result = $conn->query($sql); 
         
-        // shows all the posts
+        // shows all the posts by the user
         include "view-posts.php";
 
         $result->free_result();

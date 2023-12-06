@@ -1,3 +1,4 @@
+<!-- page accessed through clicking email link -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- debugging, echo user token -->
     <h1>Your token</h1>
     <?php
     

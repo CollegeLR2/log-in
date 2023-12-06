@@ -11,6 +11,7 @@ function connect() {
     return $conn;
 }
 
+// adds a new post to the table
 function newPost($conn) {
     $query = "INSERT INTO posts (user, post, time) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($query);
