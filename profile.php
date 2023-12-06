@@ -23,6 +23,13 @@ $conn = connect();
 
     <div class="container text-center">
         <h1>Posts made by <?= $user->email ?></h1>
+
+        <!-- helpful message to tell user when they've deleted a post -->
+        <?php if(isset($_GET["msg"]) && $_GET["msg"]=="del-success"): ?>
+            <br />
+            <h4 class="success">Successfully deleted a post</h4>
+        <?php endif ?>
+        
         <br />
 
         <?php 

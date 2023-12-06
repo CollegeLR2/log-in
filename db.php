@@ -18,3 +18,10 @@ function newPost($conn) {
     $stmt->bind_param("sss", $_POST["user"], $_POST["post"], $_POST["time"]);
     $stmt->execute();
 }
+
+function deletePost($post_id, $conn) {
+    $query = "DELETE FROM posts WHERE post_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $_POST["post_id"]);
+    $stmt->execute();
+}

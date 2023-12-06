@@ -18,6 +18,8 @@ $mail->Port = 587;
 $mail->SMTPSecure = "tls";// PHPMailer::ENCRYPTION_SMTPS;
 $mail->SMTPAuth = true;
 $mail->Username = "truro-college";
+// password is stored in .gitignore as an encoded password
+// it is called from the hidden file and then decoded before using it
 $mail->Password = base64_decode(file_get_contents("password.txt"));
 
 // address the email is sent from

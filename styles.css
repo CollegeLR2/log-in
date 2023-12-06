@@ -43,6 +43,10 @@ input {
     text-shadow: 3px 3px #bf5555;
 }
 
+.delete {
+    background-color: #831919;
+}
+
 /* placeholder text inside of inputs */
 ::placeholder {
     color: #ffffff;

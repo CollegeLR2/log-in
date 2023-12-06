@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- debugging, echo user token -->
     <h1>Your token</h1>
-    <?php
-    
-    echo $_GET["token"];
-    
-    ?>
 </body>
 </html>
