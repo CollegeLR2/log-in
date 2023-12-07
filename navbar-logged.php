@@ -19,8 +19,8 @@ if (isset($_SESSION["user"])) {
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" href="index.php">Home</a>
-        <a class="nav-link" href="message.php">Create</a>
-        <a class="nav-link" href="view.php">Explore</a>
+        <a class="nav-link" href="message.php">Chat</a>
+        <a class="nav-link disabled" href="view.php">Explore</a>
         <!-- the active class means this link is more bold -->
         <a class="nav-link active" href="log-out.php">Log out</a>
       </div>

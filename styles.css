@@ -22,8 +22,8 @@ input {
 
 /* style when viewing posts */
 .post {
-    width: 35em;
-    height: 20em;
+    width: 30em;
+    height: 2em;
     background-color: #000000;
     color: #ffffff;
 }

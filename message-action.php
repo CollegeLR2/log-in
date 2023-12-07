@@ -8,6 +8,6 @@ $conn = connect();
 
 newPost($conn);
 
-header("Location: view.php?msg=newPost")
+header("Location: message.php?msg=newPost")
 
 ?>

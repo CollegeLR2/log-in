@@ -14,6 +14,8 @@ if (isset($_SESSION["user"])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- this page refreshes on its own every 5 seconds to keep up with new messages -->
+    <meta http-equiv="refresh" content="5">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Post</title>
@@ -25,7 +27,11 @@ if (isset($_SESSION["user"])) {
     <?php include_once "navbar-logged.php" ?>
 
     <div class="container text-center">
-        <h1>Create a new post</h1>
+        <!-- <h1>Create a new post</h1> -->
+        <?php if(isset($_GET["msg"]) && $_GET["msg"]=="newPost"): ?>
+            <br />
+            <h4 class="success">Message sent successfully</h4>
+        <?php endif ?>
         <br />
         <form action="message-action.php" method="post">
             <!-- <input type="text" name="post" class="post"> -->
@@ -33,13 +39,14 @@ if (isset($_SESSION["user"])) {
             they will send to the action page to be added to the db -->
             <input type="hidden" name="user" value="<?= $user->email ?>">
             <input type="hidden" name="time" value="<?= time() ?>">
-            <textarea name="post" class="post" placeholder="Create a post"></textarea>
-            <div class="col">
-                <br />
-                <button type="submit">Create post</button>
-            </div>
+            <textarea name="post" class="post" placeholder="Type a message"></textarea>
+            <!-- <div class="col"> -->
+            <button type="submit">Send</button>
+            <!-- </div> -->
         </form>
     </div>
+
+    <?php include "view.php" ?>
 
 </body>
 </html>
