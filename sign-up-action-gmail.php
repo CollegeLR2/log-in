@@ -23,10 +23,11 @@ $mail->Username = "truro-college";
 $mail->Password = base64_decode(file_get_contents("password.txt"));
 
 // address the email is sent from
-$mail->setFrom("johng@truro-penwith.ac.uk", "John");
-$mail->addReplyTo("johng@truro-penwith.ac.uk", "John");
+$mail->setFrom("er339467@truro-penwith.ac.uk", "L Rogers"); //"johng@truro-penwith.ac.uk", "John"
+$mail->addReplyTo("er339467@truro-penwith.ac.uk", "L Rogers");
 // address email is sent to
-$mail->addAddress("er339467@truro-penwith.ac.uk", "L Rogers");
+$mail->addAddress($user->email, "New user");
+// $mail->addAddress("er339467@truro-penwith.ac.uk", "L Rogers");
 $mail->Subject = "PHPMailer SMTP Test";
 
 // anything in email.php is sent as the email content
@@ -37,7 +38,7 @@ if ( !$mail->send() ) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
     echo "Email has been sent";
-    header("Location: index.php");
+    // header("Location: index.php");
 }
 
 ?>
