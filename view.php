@@ -1,6 +1,6 @@
 <?php 
 
-session_start();
+// session_start();
 
 include_once "db.php";
 $conn = connect();
@@ -21,12 +21,12 @@ $conn = connect();
     <?php include_once "navbar-logged.php" ?>
 
     <div class="container text-center">
-        <?php if(isset($_GET["msg"]) && $_GET["msg"]=="newPost"): ?>
+        <!-- <?php if(isset($_GET["msg"]) && $_GET["msg"]=="newPost"): ?>
             <br />
             <h4 class="success">New post created successfully</h4>
-        <?php endif ?>
+        <?php endif ?> -->
 
-        <h1>Explore New Posts</h1>
+        <!-- <h1>Explore New Posts</h1> -->
         <br />
 
         <?php 
