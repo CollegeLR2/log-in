@@ -1,4 +1,9 @@
 <!-- page accessed through clicking email link -->
+
+<?php
+include "user.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +15,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Your token</h1>
+    <h1>Verify</h1>
+    <?= $user->token ?>
 </body>
 </html>

@@ -9,12 +9,8 @@ include_once "user.php";
 <br />
 
 <!-- <a href="log-in.localhost/verify-email.php?token={ $user->token }">Verify your email</a> -->
-
-<?php 
-echo $user->email;
-echo $user->token;
-?>
+<a href="log-in.localhost/verify-email.php">Verify your email</a>
 
 <br />
-<p>Above is (hopefully) your email and a token you need to activate your account</p>
+<!-- <p>Above is (hopefully) your email and a token you need to activate your account</p> -->
 <p>This message has been sent because you signed up to log-in.localhost</p>
