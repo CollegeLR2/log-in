@@ -1,7 +1,7 @@
 <!-- page accessed through clicking email link -->
-
-<?php
-include "user.php";
+<?php 
+include "db.php";
+$conn = connect();
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,22 @@ include "user.php";
 </head>
 <body>
     <h1>Verify</h1>
-    <?= $user->token ?>
+    <br />
+
+    <?php 
+    if(isset($_GET["token"])) {
+        $token = $_GET["token"];
+        echo $token;
+        // $query = "SELECT * FROM users WHERE token = '$token'";
+        // $stmt = $conn->prepare($query);
+        // $result = $stmt->execute();
+        $query = "UPDATE users SET is_active = 1 WHERE token = '$token'";
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+    } else {
+        echo "<p>You don't have a token</p>";
+    } 
+    ?>
+
 </body>
 </html>
