@@ -22,10 +22,6 @@ $conn = connect();
     <?php include_once "navbar-logged.php" ?>
 
     <div class="container text-center">
-        <!-- <?php if(isset($_GET["msg"]) && $_GET["msg"]=="newPost"): ?>
-            <br />
-            <h4 class="success">New post created successfully</h4>
-        <?php endif ?> -->
 
         <!-- <h1>Explore New Posts</h1> -->
         <br />
