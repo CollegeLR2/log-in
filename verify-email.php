@@ -15,21 +15,22 @@ $conn = connect();
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Verify</h1>
+    <h1>Verify Email</h1>
     <br />
 
     <?php 
     if(isset($_GET["token"])) {
         $token = $_GET["token"];
-        echo $token;
+        // echo $token;
         // $query = "SELECT * FROM users WHERE token = '$token'";
         // $stmt = $conn->prepare($query);
         // $result = $stmt->execute();
         $query = "UPDATE users SET is_active = 1 WHERE token = '$token'";
         $stmt = $conn->prepare($query);
         $stmt->execute();
+        echo "You have been successfully verified";
     } else {
-        echo "<p>You don't have a token</p>";
+        echo "<p>Unable to verify</p>";
     } 
     ?>
 
