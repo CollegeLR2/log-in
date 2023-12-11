@@ -5,6 +5,11 @@
         <p class="card-title"><?= $row["user"] ?></p>
         <h4 class="card-text"><?= $row["post"] ?></h4>
 
+        <!-- if the message has a # anywhere in it -->
+        <?php if (str_contains($row["post"], "#")): ?>
+            <a href="">You have used a hashtag</a>
+        <?php endif; ?>
+
         <!-- Show delete button only on posts in profile.php
              $_SERVER["PHP_SELF"] gets the name of the current file being used -->
         <?php if ($_SERVER["PHP_SELF"] === "/profile.php"): ?>
