@@ -7,7 +7,7 @@
 
         <!-- if the message has a # anywhere in it -->
         <?php if (str_contains($row["post"], "#")): ?>
-            <a href="">You have used a hashtag</a>
+            <a href="/tags.php">This post contains a #hashtag</a>
         <?php endif; ?>
 
         <!-- Show delete button only on posts in profile.php
