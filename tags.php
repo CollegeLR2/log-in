@@ -1,6 +1,8 @@
 <?php 
 // makes the navbar work as it relies on session
 session_start();
+include "db.php";
+$conn = connect();
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +20,25 @@ session_start();
 
     <div class="container text-center">
         <h1>Explore Hashtags</h1>
-        
+        <?php
+        // gets hashtag clicked on from view-posts.php
+        if (isset($_GET["tag"])) {
+            $tag_used = $_GET["tag"];
+            echo "<h3> {$_GET['tag']} </h3>"; 
+            // echo $tag_used;
+            // selects all the posts that contain that specific hashtag
+            $sql = "SELECT * FROM posts WHERE post LIKE '%" . mysqli_real_escape_string($conn, $tag_used) . "%' ORDER BY time DESC";
+            $result = $conn->query($sql); 
+            include "view-posts.php";
+        } else {
+            echo "<h3>Trending hashtags</h3>";
+            // selects all posts that use hashtags
+            $sql = "SELECT * FROM posts WHERE post LIKE '%" . mysqli_real_escape_string($conn, "#") . "%' ORDER BY time DESC";
+            $result = $conn->query($sql); 
+            include "view-posts.php";
+        }
+        ?>
+
     </div>
 </body>
 </html>
