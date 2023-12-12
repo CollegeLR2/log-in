@@ -9,7 +9,8 @@ include_once "user.php";
 <br />
 
 <!-- <a href="log-in.localhost/verify-email.php?token={ $user->token }">Verify your email</a> -->
-<a href="log-in.localhost/verify-email.php">Verify your email</a>
+<!-- VM IP address for other people to be able to use this -->
+<a href="10.32.240.143/log-in/verify-email.php">Verify your email</a>
 
 <br />
 <!-- <p>Above is (hopefully) your email and a token you need to activate your account</p> -->

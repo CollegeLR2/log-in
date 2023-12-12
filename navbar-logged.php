@@ -21,7 +21,7 @@ if (isset($_SESSION["user"])) {
         <a class="nav-link" aria-current="page" href="index.php">Home</a>
         <a class="nav-link" href="message.php">Chat</a>
         <!-- <a class="nav-link disabled" href="view.php">Explore</a> -->
-        <a class="nav-link disabled" href="account.php">Account</a>        
+        <a class="nav-link" href="tags.php">Hashtags</a>        
         <!-- the active class means this link is more bold -->
         <a class="nav-link active" href="log-out.php">Log out</a>
       </div>
