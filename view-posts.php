@@ -3,14 +3,13 @@
     <div class="card text-bg-dark mb-3 mx-auto">
     <div class="card-body">
         <p class="card-title"><?= $row["user"] ?></p>
-        <h4 class="card-text"><?= $row["post"] ?></h4>
+        <!-- <h4 class="card-text"> //$row["post"] </h4> -->
 
         <!-- if the message has a # anywhere in it -->
-        <?php if (str_contains($row["post"], "#")): ?>
-            <!-- <a href="/tags.php">This post contains a #hashtag</a>
-            <br /> -->
+        <?php if (str_contains($row["post"], "#")):
+            //<!-- <a href="/tags.php">This post contains a #hashtag</a>
+            //<br /> -->
 
-            <?php 
             // gets the hashtags used in the post
             // wordwrap separates the words into new lines
             // $words = array(wordwrap($row["post"], 1, "<br />"));
@@ -23,11 +22,15 @@
                     // correctly used in the a tag
                     $tag_used_html = htmlspecialchars($tag_used);
                     $tag_used_encoded = str_replace("#", "%23", $tag_used_html);
-                    echo "<a href='tags.php?tag={$tag_used_encoded}'>{$tag_used_html}</a>";
+                    // echo "<a href='tags.php?tag={$tag_used_encoded}'>{$tag_used_html}</a>";
+                    // replace the hashtag in the post for a link 
+                    $replace = str_replace($words[$i], "<a href='tags.php?tag={$tag_used_encoded}'>$tag_used_html</a>", $row["post"]);
+                    // echo $replace;
+                    echo "<h4 class='card-text'>" . $replace . "</h4>";
                 }
-            }
-            ?>
-
+             } ?>
+        <?php else: ?>
+            <h4 class='card-text'><?= $row["post"] ?></h4>
         <?php endif; ?>
 
         <!-- Show delete button only on posts in profile.php

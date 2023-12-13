@@ -33,7 +33,7 @@ $mail->Subject = "PHPMailer SMTP Test";
 // anything in email.php is sent as the email content
 // $mail->msgHTML(file_get_contents("email.php"));
 $mail->isHTML(true);
-$mail->Body="<a href='log-in.localhost/verify-email.php?token={$user->token}'>Verification link</a>"; //"Thank you for signing up. Here is your token " . $user->token
+$mail->Body="<a href='10.32.240.143/log-in/verify-email.php?token={$user->token}'>Verification link</a>"; //"Thank you for signing up. Here is your token " . $user->token
 $mail->AltBody = "Thanks for signing up to the site!";
 
 if ( !$mail->send() ) {
