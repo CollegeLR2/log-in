@@ -1,10 +1,13 @@
 body {
-    background-color: #8699cd;
+    background: #71eaf9;
+    background: linear-gradient(90deg, #71eaf9 0%, 
+              #7172f8 25%, #b95af9 50%, 
+              #f94545 75%, #ffa149 100%);
     color: #000000;
 }
 
 button {
-    background-color: #348319;
+    background-color: #000000;
     color: #ffffff;
 }
 
@@ -17,7 +20,7 @@ input {
 .link-button {
     text-decoration: none;
     color:#ffffff;
-    background-color: #348319;
+    /* background-color: #000000; */
 }
 
 /* style when viewing posts */
@@ -29,22 +32,37 @@ input {
 }
 
 .card {
-    width: 18rem;
+    width: 20rem;
 }
 
 /* status message when something successful happens */
 .success {
-    /* background-color: #61bf55; */
-    text-shadow: 3px 3px #61bf55;    
+    /* makes an outline to the text so it can be seen 
+    against the gradient background */
+    text-shadow: -1.5px -1.5px 0 #000000, 
+    1.5px -1.5px 0 #000000, 
+    -1.5px 1.5px 0 #000000, 
+    1.5px 1.5px 0 #000000;
+    color: #49ff4c;    
 }
 
 /* status message when something fails */
 .failure {
-    text-shadow: 3px 3px #bf5555;
+    text-shadow: -1.5px -1.5px 0 #000000, 
+    1.5px -1.5px 0 #000000, 
+    -1.5px 1.5px 0 #000000, 
+    1.5px 1.5px 0 #000000;
+    color: #f94545;
 }
 
+/* buttons for deleting posts */
 .delete {
-    background-color: #831919;
+    background-color: #f94545;
+}
+
+.hashtag a {
+    color: #49ff4c;
+    text-decoration: none;
 }
 
 /* placeholder text inside of inputs */

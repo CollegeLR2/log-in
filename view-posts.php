@@ -1,3 +1,5 @@
+<!-- put all this into functions -->
+
 <!-- displays each post in its own card -->
 <?php 
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -27,7 +29,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                         // replace the hashtag in the post for a link 
                         $replace = str_replace($words[$i], "<a href='tags.php?tag={$tag_used_encoded}'>$tag_used_html</a>", $row["post"]);
                         // echo $replace;
-                        echo "<h4 class='card-text'>" . $replace . "</h4>";
+                        echo "<h4 class='hashtag card-text'>" . $replace . "</h4>";
                         // make an array and add words to it here, then loop over array to output words in post
                     }
                 } 
