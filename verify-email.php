@@ -15,24 +15,28 @@ $conn = connect();
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Verify Email</h1>
-    <br />
+    <div class='container text-center'>
+        <h1>Verify Email</h1>
+        <br />
 
-    <?php 
-    if(isset($_GET["token"])) {
-        $token = $_GET["token"];
-        // echo $token;
-        // $query = "SELECT * FROM users WHERE token = '$token'";
-        // $stmt = $conn->prepare($query);
-        // $result = $stmt->execute();
-        $query = "UPDATE users SET is_active = 1 WHERE token = '$token'";
-        $stmt = $conn->prepare($query);
-        $stmt->execute();
-        echo "You have been successfully verified";
-    } else {
-        echo "<p>Unable to verify</p>";
-    } 
-    ?>
+        <?php 
+        if(isset($_GET["token"])) {
+            $token = $_GET["token"];
+            // echo $token;
+            // $query = "SELECT * FROM users WHERE token = '$token'";
+            // $stmt = $conn->prepare($query);
+            // $result = $stmt->execute();
+            $query = "UPDATE users SET is_active = 1 WHERE token = '$token'";
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+            echo "<h4 class='success'>You have been successfully verified. <br /> Please log in again to continue:</h4>";
+            include "log-in.php";
+        } else {
+            echo "<h4 class='failure'>Unable to verify your email, please try again</h4>";
+            echo "<button><a href='index.php' class='link-button'>Go back</a></button>";
+        } 
+        ?>
+    </div>
 
 </body>
 </html>

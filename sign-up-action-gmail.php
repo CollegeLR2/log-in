@@ -10,7 +10,8 @@ use PHPMailer\PHPMailer\SMTP;
 $mail = new PHPMailer();
 $mail->isSMTP();
 
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+$mail->SMTPDebug = 0;
 
 // mail details from John
 $mail->Host = "mail.smtp2go.com";
@@ -39,8 +40,8 @@ $mail->AltBody = "Thanks for signing up to the site!";
 if ( !$mail->send() ) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Email has been sent";
-    // header("Location: index.php");
+    // echo "Email has been sent";
+    header("Location: index.php?msg=verify");
 }
 
 ?>

@@ -42,6 +42,11 @@ if (isset($_SESSION["user"])) {
                     <button><a href="sign-up.php" class="link-button">Sign Up</a></button>
                 </div>
             </div>
+
+            <?php if(isset($_GET["msg"]) && $_GET["msg"]=="verify"): ?>
+                <br />
+                <h4 class="success">Successfully signed up, don't forget to verify your email</h4>
+            <?php endif ?>
         </div>
     <?php endif ?>
 
