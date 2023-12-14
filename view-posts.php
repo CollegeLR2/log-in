@@ -27,30 +27,26 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                         // turns the #value to be %23value as that is 
                         // correctly used in the a tag
                         $tag_used_encoded = str_replace("#", "%23", $tag_used_html);
-                        // echo "<a href='tags.php?tag={$tag_used_encoded}'>{$tag_used_html}</a>";
                         // replace the hashtag in the post for a link 
-                        $replace = str_replace($tag_used_html, "<a href='tags.php?tag={$tag_used_encoded}'>$tag_used_html</a>", $tag_used); //
-                        // echo $replace;
+                        $replace = str_replace($tag_used_html, "<a href='tags.php?tag={$tag_used_encoded}'>$tag_used_html</a>", $tag_used); 
                         // echo "<h4 class='hashtag card-text'>" . $replace . "</h4>";
                         $post_words[$i] = $replace;
-                        // echo "Link? " . print_r($post_words);
-                        // make an array and add words to it here, then loop over array to output words in post
-                        // $post_words[$i] = $replace;
-                        // echo "This: " . $post_words;
-                        // echo $post_words[0];
-                        // echo $post_words[1];
+                    // words in a post containing a hashtag, 
+                    // but the word being looked at is not the hashtag
                     } else {
                         $post_words[$i] = $words[$i];
-                        // echo "Not link" . print_r($post_words);
                     }
                 }
-                // echo each word from the words array
+                // echo each word from the words array, whether or not theyre hashtags or not
                 echo "<h4 class='hashtag card-text'>";
                 foreach ($post_words as $value) {
+                    // adds a space after the value 
+                    // else all the words become one word
                     echo $value . " ";
                 } 
                 echo "</h4>";
 
+            // if the post is normal (no hashtags)
             } else {
                 echo "<h4 class='card-text'>" . $row["post"] . "</h4>";
             }
