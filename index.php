@@ -33,17 +33,18 @@ if (isset($_SESSION["user"])) {
 
             <div class="row">
                 <div class="col info">
-                    <h3>Chat with people</h3>
+                    <h3 class="hashtag"><a href="message.php">Chat with people</a></h3>
                     <h4>Click the Chat button above to begin</h4>
                 </div>
                 <div class="col info">
-                    <h3>Explore hashtags</h3>
+                    <h3 class="hashtag"><a href="tags.php">Explore hashtags</a></h3>
                     <h4>Or make your own</h4>
                     </div>
                 <div class="col info">
-                    <h3>Recent updates</h3>
+                    <h3 class="hashtag"><a href="#">Recent updates</a></h3>
                     <h4>
                         <ul>
+                            <li>Update: Multiple hashtags now work properly</li>
                             <li>New feature: hashtags</li>
                             <li>Update: security</li>
                             <li>New feature: verify email</li>

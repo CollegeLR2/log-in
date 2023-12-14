@@ -2,8 +2,6 @@
 //<!-- if the message has a # anywhere in it -->
 if (str_contains($row["post"], "#")) {
     $post_words = array();
-    //<!-- <a href="/tags.php">This post contains a #hashtag</a>
-    //<br /> -->
 
     // gets the hashtags used in the post
     // wordwrap separates the words into new lines
