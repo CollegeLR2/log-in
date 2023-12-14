@@ -10,6 +10,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
             //<!-- if the message has a # anywhere in it -->
             if (str_contains($row["post"], "#")) {
+                $post_words = array();
                 //<!-- <a href="/tags.php">This post contains a #hashtag</a>
                 //<br /> -->
 
@@ -21,18 +22,35 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                     // echo $words[$i];
                     if (str_contains($words[$i], "#")) {
                         $tag_used = $words[$i];
+                        $post_words[$i] = $words[$i];
+                        $tag_used_html = htmlspecialchars($tag_used);
                         // turns the #value to be %23value as that is 
                         // correctly used in the a tag
-                        $tag_used_html = htmlspecialchars($tag_used);
                         $tag_used_encoded = str_replace("#", "%23", $tag_used_html);
                         // echo "<a href='tags.php?tag={$tag_used_encoded}'>{$tag_used_html}</a>";
                         // replace the hashtag in the post for a link 
-                        $replace = str_replace($words[$i], "<a href='tags.php?tag={$tag_used_encoded}'>$tag_used_html</a>", $row["post"]);
+                        $replace = str_replace($tag_used_html, "<a href='tags.php?tag={$tag_used_encoded}'>$tag_used_html</a>", $tag_used); //
                         // echo $replace;
-                        echo "<h4 class='hashtag card-text'>" . $replace . "</h4>";
+                        // echo "<h4 class='hashtag card-text'>" . $replace . "</h4>";
+                        $post_words[$i] = $replace;
+                        // echo "Link? " . print_r($post_words);
                         // make an array and add words to it here, then loop over array to output words in post
+                        // $post_words[$i] = $replace;
+                        // echo "This: " . $post_words;
+                        // echo $post_words[0];
+                        // echo $post_words[1];
+                    } else {
+                        $post_words[$i] = $words[$i];
+                        // echo "Not link" . print_r($post_words);
                     }
+                }
+                // echo each word from the words array
+                echo "<h4 class='hashtag card-text'>";
+                foreach ($post_words as $value) {
+                    echo $value . " ";
                 } 
+                echo "</h4>";
+
             } else {
                 echo "<h4 class='card-text'>" . $row["post"] . "</h4>";
             }
