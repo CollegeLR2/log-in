@@ -29,13 +29,14 @@ $mail->addReplyTo("er339467@truro-penwith.ac.uk", "L Rogers");
 // address email is sent to
 $mail->addAddress($user->email, "New user");
 // $mail->addAddress("er339467@truro-penwith.ac.uk", "L Rogers");
-$mail->Subject = "PHPMailer SMTP Test";
+$mail->Subject = "Thanks for signing up";
 
 // anything in email.php is sent as the email content
 // $mail->msgHTML(file_get_contents("email.php"));
 $mail->isHTML(true);
-$mail->Body="<a href='10.32.240.143/log-in/verify-email.php?token={$user->token}'>Verification link</a>"; //"Thank you for signing up. Here is your token " . $user->token
-$mail->AltBody = "Thanks for signing up to the site!";
+$mail->Body="<p>Thank you for signing up. Use this link to verify your account and start chatting!<br />
+            <a href='10.32.240.143/log-in/verify-email.php?token={$user->token}'>Verification link</a>";
+// $mail->AltBody = "Thanks for signing up to the site!";
 
 if ( !$mail->send() ) {
     echo "Mailer Error: " . $mail->ErrorInfo;

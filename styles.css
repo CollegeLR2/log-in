@@ -33,6 +33,14 @@ input {
 
 .card {
     width: 20rem;
+    background-color: #232222;
+    color: #ffffff;
+}
+
+.info {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1.5em;
 }
 
 /* status message when something successful happens */
@@ -67,5 +75,5 @@ input {
 
 /* placeholder text inside of inputs */
 ::placeholder {
-    color: #ffffff;
+    color: #898989;
 }

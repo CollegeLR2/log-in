@@ -3,7 +3,7 @@
 <!-- displays each post in its own card -->
 <?php 
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-    echo "<div class='card text-bg-dark mb-3 mx-auto'>";
+    echo "<div class='card mb-3 mx-auto'>"; //text-bg-dark
         echo "<div class='card-body'>";
             echo "<p class='card-title'>".  $row["user"] . "</p>";
             //<!-- <h4 class="card-text"> //$row["post"] </h4> -->
