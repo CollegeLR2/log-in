@@ -60,12 +60,12 @@ input {
     1.5px -1.5px 0 #000000, 
     -1.5px 1.5px 0 #000000, 
     1.5px 1.5px 0 #000000;
-    color: #f94545;
+    color: #d53b3b;
 }
 
 /* buttons for deleting posts */
 .delete {
-    background-color: #f94545;
+    background-color: #d53b3b;
 }
 
 .hashtag a {

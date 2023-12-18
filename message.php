@@ -33,16 +33,14 @@ if (isset($_SESSION["user"])) {
             <h4 class="success">Message sent successfully</h4>
         <?php endif ?>
         <br />
+        <!-- only show this if user is verified -->
         <form action="message-action.php" method="post">
-            <!-- <input type="text" name="post" class="post"> -->
             <!--these hidden inputs will not be shown to the user
             they will send to the action page to be added to the db -->
             <input type="hidden" name="user" value="<?= $user->email ?>">
             <input type="hidden" name="time" value="<?= time() ?>">
             <textarea name="post" class="post" placeholder="Type a message" required></textarea>
-            <!-- <div class="col"> -->
             <button type="submit">Send</button>
-            <!-- </div> -->
         </form>
     </div>
 

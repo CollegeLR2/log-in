@@ -1,5 +1,3 @@
-<!-- put all this into functions -->
-
 <!-- displays each post in its own card -->
 <?php 
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
