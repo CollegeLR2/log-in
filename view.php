@@ -22,8 +22,6 @@ $conn = connect();
     <?php include_once "navbar-logged.php" ?>
 
     <div class="container text-center">
-
-        <!-- <h1>Explore New Posts</h1> -->
         <br />
 
         <?php 

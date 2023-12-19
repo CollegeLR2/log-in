@@ -14,7 +14,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                 // The onsubmit creates a confirmation as an alert. 
                 // The user can either confirm or cancel the deletion from there
                 echo "<form action='delete-post.php' method='post' onsubmit='return confirm(\"Are you sure you want to delete this post?\");'>";
-                    //Posts the post id, even though the user never sees it
+                    // Posts the post id, even though the user never sees it
                     echo "<input type='hidden' name='post_id' value='" . $row["post_id"] . "'>";
                     echo "<button class='delete' type='submit'>Delete</button>";
                 echo "</form>";
@@ -23,3 +23,4 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
         echo "</div>";
     echo "</div>";
 }
+?>

@@ -24,8 +24,7 @@ $conn = connect();
         // gets hashtag clicked on from view-posts.php
         if (isset($_GET["tag"])) {
             $tag_used = $_GET["tag"];
-            echo "<h3> {$_GET['tag']} </h3>"; 
-            // echo $tag_used;
+            echo "<h3> {$_GET['tag']} </h3>";
             // selects all the posts that contain that specific hashtag
             $sql = "SELECT * FROM posts WHERE post LIKE '%" . mysqli_real_escape_string($conn, $tag_used) . "%' ORDER BY time DESC";
             $result = $conn->query($sql); 
